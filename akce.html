@@ -39,39 +39,68 @@
     <section class="section">
       <div class="container">
 
-        <!-- EMPTY STATE — odstraňte tento blok a nahraďte kartami akcí níže -->
-        <div class="empty-state">
-          <div class="empty-state-icon">📅</div>
-          <h3>Akce budou brzy přidány</h3>
-          <p>Připravujeme program na letošní rok. Sledujte tuto stránku nebo nás sledujte na <a href="https://www.facebook.com/miladachal" target="_blank" rel="noopener">Facebooku</a>.</p>
-        </div>
+        <!-- ============================================================
+             NADCHÁZEJÍCÍ AKCE
+             ============================================================ -->
+        <div class="events-section-label">Nadcházející akce</div>
 
         <!--
-        ============================================================
-        ŠABLONA AKCE — zkopírujte blok níže pro každou novou akci
-        a odstraňte výše uvedený empty-state blok.
-        ============================================================
+        ŠABLONA NADCHÁZEJÍCÍ AKCE — zkopírujte a vyplňte pro každou novou akci.
+        Odstraňte empty-state blok níže, jakmile přidáte první akci.
+
+        <div class="events-list">
+          <article class="event-card">
+            <div class="event-date">
+              <div class="day">DD</div>
+              <div class="month">měs</div>
+            </div>
+            <div class="event-info">
+              <span class="event-badge event-badge--upcoming">Nadcházející</span>
+              <h3>Název akce nebo semináře</h3>
+              <p class="event-meta">
+                <span>🕐 HH:MM</span>
+                <span>📍 Název místa, Adresa, Město</span>
+              </p>
+              <p>Krátký popis akce.</p>
+              <a href="https://www.facebook.com/events/XXXXXXXX" target="_blank" rel="noopener"
+                 class="btn btn--outline" style="margin-top: 1rem; padding: 0.5rem 1.25rem; font-size: 0.9rem;">
+                Přihlásit se
+              </a>
+            </div>
+          </article>
+        </div>
+        -->
+
+        <div class="empty-state">
+          <div class="empty-state-icon">📅</div>
+          <h3>Žádné nadcházející akce</h3>
+          <p>Sledujte tuto stránku nebo <a href="https://www.facebook.com/miladachal" target="_blank" rel="noopener">Facebook</a> pro aktuální program.</p>
+        </div>
+
+        <!-- ============================================================
+             PROBĚHLÉ AKCE
+             Přidávejte starší akce sem — class="event-card event-card--past"
+             ============================================================ -->
+        <div class="events-section-label" style="margin-top: 3rem;">Proběhlé akce</div>
 
         <div class="events-list">
 
-          <article class="event-card">
+          <article class="event-card event-card--past">
             <div class="event-date">
               <div class="day">15</div>
-              <div class="month">bře</div>
+              <div class="month">led</div>
             </div>
             <div class="event-info">
-              <h3>Název akce nebo semináře</h3>
+              <span class="event-badge event-badge--past">Proběhlo</span>
+              <h3>Tanec Univerzálního Míru s Miladou Chalupovou a Danielem Podneckým</h3>
               <p class="event-meta">
-                <span>🕐 10:00–18:00</span>
-                <span>📍 Místo konání, Město</span>
+                <span>🕐 19:00</span>
+                <span>📍 ShanTea — čajovna a kavárna, Zámecká 1456, 543 01 Vrchlabí</span>
               </p>
-              <p>Popis akce — krátce shrňte obsah, pro koho je určena a co účastníci získají.</p>
-              <a href="https://www.facebook.com/events/XXXXXXXX" target="_blank" rel="noopener" class="btn btn--outline" style="margin-top: 1rem; padding: 0.5rem 1.25rem; font-size: 0.9rem;">Přihlásit se</a>
             </div>
           </article>
 
         </div>
-        -->
 
       </div>
     </section>

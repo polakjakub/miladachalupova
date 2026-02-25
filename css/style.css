@@ -447,6 +447,50 @@ p:last-child { margin-bottom: 0; }
 .event-meta { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.6rem; }
 .event-meta span + span::before { content: ' · '; }
 
+/* Event badge */
+.event-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+.event-badge--upcoming {
+  background: var(--ochre-light);
+  color: var(--ochre-dark);
+}
+.event-badge--past {
+  background: #EBEBEB;
+  color: #888;
+}
+
+/* Past event variant */
+.event-card--past {
+  border-left-color: #CCC;
+  opacity: 0.75;
+}
+.event-card--past .event-date {
+  background: #AAA;
+}
+.event-card--past h3 {
+  color: var(--text-muted);
+}
+
+/* Section label */
+.events-section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
 /* ============================================================
    EMPTY STATE
    ============================================================ */
