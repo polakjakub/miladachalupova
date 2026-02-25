@@ -136,50 +136,72 @@ p:last-child { margin-bottom: 0; }
    ============================================================ */
 .site-header {
   background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--ochre-light);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 8px rgba(44,34,24,0.06);
+  box-shadow: 0 2px 12px rgba(44,34,24,0.08);
 }
 
 .site-header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: 72px;
 }
 
 .site-logo {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--text);
   white-space: nowrap;
+  letter-spacing: -0.01em;
 }
 .site-logo span { color: var(--ochre); }
-.site-logo:hover { color: var(--text); }
+.site-logo:hover { color: var(--ochre-dark); }
 
 .nav-list {
   display: flex;
-  gap: 0.25rem;
+  gap: 0.1rem;
   align-items: center;
 }
 
 .nav-list a {
-  color: var(--text-muted);
-  font-size: 0.92rem;
+  color: var(--text);
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 0.4rem 0.85rem;
+  letter-spacing: 0.01em;
+  padding: 0.5rem 1rem;
   border-radius: var(--radius);
+  position: relative;
   transition: color var(--transition), background var(--transition);
 }
-.nav-list a:hover,
+.nav-list a::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: var(--ochre);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+.nav-list a:hover {
+  color: var(--ochre);
+  background: var(--ochre-pale);
+}
+.nav-list a:hover::after {
+  transform: scaleX(1);
+}
 .nav-list a.active {
   color: var(--ochre);
-  background: var(--ochre-light);
+  background: var(--ochre-pale);
+}
+.nav-list a.active::after {
+  transform: scaleX(1);
 }
 
 /* Hamburger */
@@ -187,23 +209,27 @@ p:last-child { margin-bottom: 0; }
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.4rem;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  transition: background var(--transition);
 }
+.nav-toggle:hover { background: var(--ochre-pale); }
 .nav-toggle span {
   display: block;
-  width: 24px;
+  width: 26px;
   height: 2px;
   background: var(--text);
   border-radius: 2px;
-  transition: transform var(--transition), opacity var(--transition);
+  transition: transform var(--transition), opacity var(--transition), background var(--transition);
 }
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-toggle.open span { background: var(--ochre); }
+.nav-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* ============================================================
    HERO
@@ -532,22 +558,30 @@ p:last-child { margin-bottom: 0; }
   .site-nav {
     display: none;
     position: absolute;
-    top: 70px;
+    top: 72px;
     left: 0;
     right: 0;
     background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 8px 24px rgba(44,34,24,0.1);
-    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--ochre-light);
+    border-bottom: 2px solid var(--ochre-light);
+    box-shadow: 0 8px 24px rgba(44,34,24,0.12);
+    padding: 0.75rem 1.5rem 1rem;
   }
   .site-nav.open { display: block; }
 
   .nav-list {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
+    align-items: stretch;
+    gap: 0.15rem;
   }
-  .nav-list a { padding: 0.6rem 1rem; width: 100%; display: block; }
+  .nav-list a {
+    padding: 0.7rem 1rem;
+    width: 100%;
+    display: block;
+    font-size: 1.05rem;
+    border-radius: var(--radius);
+  }
+  .nav-list a::after { display: none; }
 
   /* Hero */
   .hero { padding: 3rem 0 2.5rem; }

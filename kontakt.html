@@ -9,7 +9,23 @@
 </head>
 <body>
 
-  <div id="header-placeholder"></div>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="site-logo">Milada <span>Chalupová</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Otevřít/zavřít menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Hlavní navigace">
+        <ul class="nav-list">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="o-mne.html">O mně</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="akce.html">Akce</a></li>
+          <li><a href="kontakt.html" class="active" aria-current="page">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
 
@@ -64,8 +80,48 @@
 
   </main>
 
-  <div id="footer-placeholder"></div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">Milada <span>Chalupová</span></a>
+          <p>Průvodkyně tancem, souhvězdími<br>a vnitřní cestou.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigace</h4>
+          <ul>
+            <li><a href="index.html">Domů</a></li>
+            <li><a href="o-mne.html">O mně</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="akce.html">Akce</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="mailto:malkuta@gmail.com">malkuta@gmail.com</a></li>
+            <li><a href="https://www.facebook.com/miladachal" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Milada Chalupová. Všechna práva vyhrazena.</p>
+      </div>
+    </div>
+  </footer>
 
-  <script src="assets/js/components.js"></script>
+  <script>
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav = document.getElementById('site-nav');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    })();
+  </script>
+
 </body>
 </html>
